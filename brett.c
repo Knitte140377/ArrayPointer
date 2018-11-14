@@ -13,19 +13,23 @@ void arrayAnzeigenPointer(int *pointer)
     }
 
 }
+void arrayAnlegenPointer(int *b){
+
+    for(int y=0;y<8;y++){
+        for(int x=0;x<8;x++){
+            *b++=(y+1)*10+x+1;
+        }
+    }
+    
+}
 
 int main()
 {
 
     int brett[8][8] = {0};
-
-    int y,x;
-
-    for(y=0;y<8;y++){
-        for(x=0;x<8;x++){
-            brett[y][x]=(y+1)*10+x+1;
-        }
-    }
+    
+    arrayAnlegenPointer(brett);
+    
 /*
     for(y=0;y<8;y++){
         for(x=0;x<8;x++){
