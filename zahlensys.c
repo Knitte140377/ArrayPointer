@@ -16,22 +16,27 @@ for(int i=stringSize;i>=0;i--) //zu zehn machen
 {
     wandler = (int)string[i];
     if(wandler>64)  //Ascii in azahlenwert
-    { wandler=wandler-55; } else { wandler=wandler-48; } 
+    {wandler=wandler-55;}else{wandler=wandler-48;} 
     potenz =stringSize-i;
     zehnerzahl =wandler*pow(zahlensystem, potenz)+zehnerzahl;
 }
 
+printf("16er System %s\n",string);
+printf("10er System: %d\n",zehnerzahl);
 
 int rest=0;
 rest=zehnerzahl%16;
+
+zehnerzahl=zehnerzahl/16;
     if(wandler>9)  //Ascii in zahlenwert
-    { wandler=wandler+55; } else { wandler=wandler+48; }
+    {wandler=wandler+55;}else{wandler=wandler+48;}
+    printf("%c\n",(char)wandler);
+    string[2]=(char)wandler;
 
 printf("rest %d\n",rest);
 
 
 printf("16er System %s\n",string);
-printf("10er System: %d\n",zehnerzahl);
 
 return 0;
 }
