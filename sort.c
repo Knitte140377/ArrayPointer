@@ -32,12 +32,26 @@ void erzeugeArray(int * array, int x)
 void dreiEcksTausch(int * array, int anz)
 {
     int flag;
-   for(int d=0;d<=anz-1;d++)
+    //printf("string im dreiEcksTausch: %s, %d",array, anz);
+   for(int d=0;d<anz-1;d++)
     {
         flag=0;
-        for(int i=0;i<=anz-1-d;i++)
+             printf("\nd: %d\n",d);
+        for(int i=0;i<anz-1-d;i++)
         {
-        
+            if(array[i]>array[i+1])
+            {
+                    printf("i: %d",i);
+                char temp=0;
+                temp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = temp;
+                flag=1;
+            }
+        }
+        if(flag)
+        {
+            break;
         }
     }
     
@@ -46,10 +60,11 @@ void dreiEcksTausch(int * array, int anz)
 int main()
 {
     char string[]="21754";
-    int flag, anz;
+    int anz;
     
     anz=strlen(string);
-    
+    printf("anz: %d\n",anz);
+    dreiEcksTausch(string, anz);
     
  
     
@@ -63,8 +78,8 @@ printf("%d\n%d\n",x,y);
     return 0;
 }
 
-void zeigeArrayInConsole(int * array, int anz)
+/*void zeigeArrayInConsole(int * array, int anz)
 {
-    
-}
+    printf("%s\n",string);
+}*/
 
